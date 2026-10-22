@@ -57,6 +57,9 @@ fn App() -> Element {
                     }
                 }
             }
+            div { class: "absolute top-4 left-1/2 -translate-x-1/2 border border-white/40 bg-black/70 backdrop-blur px-4 py-2 rounded flex items-center gap-4 z-10",
+                div { class: "flex gap-2" }
+            }
         }
     }
 }
@@ -78,5 +81,17 @@ fn ActionButton(
             span { class: "text-[10px] text-white/60 tracking-tighter", "{shortcut}" }
         }
 
+    }
+}
+
+fn ToolButton(icon: &'static str, shortcut: &'static str, active: bool) -> Element {
+    rsx! {
+        button { class: "relative border w-10 h-10 rounded flex items-center justify-center text-sm font-mono active:scale-95 transition border-blue-400 bg-white/20",
+
+            span { "{icon}" }
+            span { class: "absolute bottom-0.5 right-1 text-[9px] text-white/50 font-sans",
+                "{shortcut}"
+            }
+        }
     }
 }

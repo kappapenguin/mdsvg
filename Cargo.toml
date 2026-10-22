@@ -15,3 +15,9 @@ web = ["dioxus/web"]
 desktop = ["dioxus/desktop"]
 mobile = ["dioxus/mobile"]
 server = ["dioxus/server"]
+
+[profile.dev]
+debug = 1
+
+[profile.dev.package."*"]
+opt-level = 2
